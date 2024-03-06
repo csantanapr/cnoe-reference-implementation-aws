@@ -203,7 +203,7 @@ resource "random_password" "keycloak_postgres_password" {
 resource "kubectl_manifest" "application_argocd_keycloak" {
   depends_on = [
     kubectl_manifest.keycloak_secret_store,
-    kubectl_manifest.application_argocd_ingress_nginx
+    #kubectl_manifest.application_argocd_ingress_nginx
   ]
 
   yaml_body = templatefile("${path.module}/templates/argocd-apps/keycloak.yaml", {
