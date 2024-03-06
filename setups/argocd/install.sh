@@ -6,7 +6,7 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 if [ -f "${REPO_ROOT}/private/github-token" ]; then
   GITHUB_TOKEN=$(cat ${REPO_ROOT}/private/github-token | tr -d '\n')
 else
-  echo 'To get started grant the following permissions: 
+  echo 'To get started grant the following permissions:
   - Repository access for all repositories
   - Read-only access to: Administration, Contents, and Metadata.
   Get your GitHub personal access token from: https://github.com/settings/tokens?type=beta'
@@ -24,7 +24,7 @@ export GITHUB_TOKEN
 
 echo 'creating secret for ArgoCD in your cluster...'
 kubectl create ns argocd || true
-envsubst < github-secret.yaml  | kubectl apply -f - 
+envsubst < github-secret.yaml  | kubectl apply -f -
 
 echo 'creating Argo CD resources'
 cd ${REPO_ROOT}
@@ -49,7 +49,7 @@ fi
 
 set -e
 echo 'waiting for ArgoCD to be ready'
-kubectl -n argocd rollout status --watch --timeout=300s statefulset/argocd-application-controller
-kubectl -n argocd rollout status --watch --timeout=300s deployment/argocd-server
+kubectl -n argocd rollout status --watch --timeout=300s statefulset/argo-cd-argocd-application-controller
+kubectl -n argocd rollout status --watch --timeout=300s deployment/argo-cd-argocd-server
 
 cd -
