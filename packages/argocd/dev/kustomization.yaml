@@ -4,10 +4,12 @@ resources:
 #  - service-argogrpc.yaml
   - appproject-cnoe.yaml
   - appproject-demo.yaml
-patchesStrategicMerge:
-  - cm-argocd-cm.yaml
-  - argocd-cmd-params-cm.yaml
   - cm-argocd-rbac-cm.yaml
-images:
-  - name: quay.io/argoproj/argocd:v2.7.6
-    newTag: v2.7.6
+# patchesStrategicMerge:
+#   - cm-argocd-cm.yaml
+  #- cm-argocd-rbac-cm.yaml
+  #- argocd-cmd-params-cm.yaml
+
+# images:
+#   - name: quay.io/argoproj/argocd:v2.7.6
+#     newTag: v2.7.6

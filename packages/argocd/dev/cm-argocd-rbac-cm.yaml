@@ -6,3 +6,6 @@ data:
   policy.csv: |
     g, superuser, role:admin
     g, backstage, role:readonly
+  policy.default: ""
+  policy.matchMode: glob
+  scopes: '[groups]'
