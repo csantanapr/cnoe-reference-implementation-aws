@@ -108,7 +108,7 @@ resource "aws_secretsmanager_secret_version" "keycloak_config" {
 
 resource "kubectl_manifest" "keycloak_secret_store" {
   depends_on = [
-    kubectl_manifest.application_argocd_aws_load_balancer_controller,
+    #kubectl_manifest.application_argocd_aws_load_balancer_controller,
     kubectl_manifest.application_argocd_external_secrets,
     kubernetes_manifest.serviceaccount_external_secret_keycloak
   ]

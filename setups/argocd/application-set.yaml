@@ -28,7 +28,7 @@ spec:
       source:
         path: kustomize/dev
         repoURL: '{{ url }}'
-        targetRevision: HEAD
+        targetRevision: gitops-bridge-cnoe
       syncPolicy:
         automated: {}
         syncOptions:
