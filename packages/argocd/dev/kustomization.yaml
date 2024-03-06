@@ -1,7 +1,7 @@
 namespace: argocd
 resources:
-  - ../base/
-  - service-argogrpc.yaml
+# - ../base/
+#  - service-argogrpc.yaml
   - appproject-cnoe.yaml
   - appproject-demo.yaml
 patchesStrategicMerge:
