@@ -23,7 +23,7 @@ spec:
           - name: domainFilters[0]
             value: ${DOMAIN_NAME}
     - repoURL: ${GITHUB_URL}
-      targetRevision: HEAD
+      targetRevision: gitops-bridge-cnoe
       ref: values
   destination:
     server: "https://kubernetes.default.svc"
