@@ -11,9 +11,12 @@ resource "kubectl_manifest" "application_argocd_cert_manager" {
 }
 
 resource "kubectl_manifest" "cluster_issuer_prod" {
-  depends_on = [ 
-    kubectl_manifest.application_argocd_cert_manager,
-    kubectl_manifest.application_argocd_ingress_nginx
+  # depends_on = [
+  #   kubectl_manifest.application_argocd_cert_manager,
+  #   kubectl_manifest.application_argocd_ingress_nginx
+  # ]
+  depends_on = [
+    kubectl_manifest.application_argocd_cert_manager
   ]
   yaml_body = templatefile("${path.module}/templates/manifests/cluster-issuer.yaml", {
     REPO_URL = local.repo_url
