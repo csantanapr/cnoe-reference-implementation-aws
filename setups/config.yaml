@@ -1,7 +1,7 @@
 # This is the GITHUB URL where Kubernetes manifests are stored.
 # If you forked this repo, you will need to update this.
 #repo_url: "https://github.com/cnoe-io/reference-implementation-aws"
-repo_url: "https://github.com/csantanapr/cnoe-reference-implementation-aws#gitops-bridge-cnoe"
+repo_url: "https://github.com/csantanapr/cnoe-reference-implementation-aws"
 # Tags to apply to AWS resources
 tags: 
   env: "dev"
